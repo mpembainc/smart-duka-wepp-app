@@ -1,0 +1,61 @@
+<div class="row mt-5">
+  <div class="col-md-6">
+    <form [formGroup]="form" (submit)="addProduct()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" value="wrong value" formControlName="title" class="form-control"
+          [class.is-invalid]="title.invalid && title.touched" [class.is-valid]="title.valid && title.touched"
+          id="title" />
+        <div *ngIf="title.hasError('required') && title.touched" class="invalid-feedback">
+          Product title is required
+        </div>
+        <div *ngIf="title.hasError('minlength') && title.touched" class="invalid-feedback">
+          It must be at least 5 characters long.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select formControlName="category" [class.is-invalid]="category.invalid && category.touched"
+          [class.is-valid]="category.valid && category.touched" id="category" class="custom-select">
+          <option value="mobile">Mobile</option>
+          <option value="honda">Honda</option>
+        </select>
+        <div *ngIf="category.hasError('required') && category.touched" class="invalid-feedback">
+          Category is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" value="wrong value" formControlName="price" class="form-control"
+          [class.is-invalid]="price.invalid && price.touched" [class.is-valid]="price.valid && price.touched"
+          id="price" />
+        <div *ngIf="price.hasError('required') && price.touched" class="invalid-feedback">
+          Price is required
+        </div>
+        <div *ngIf="price.hasError('pattern') && price.touched" class="invalid-feedback">
+          Invalid price value
+        </div>
+        <div *ngIf="price.hasError('min') && price.touched" class="invalid-feedback">
+          It should be at least 100 TZS.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="image">Image</label>
+        <div class="custom-file">
+          <input type="file" (change)="readUrl($event)" id="image" class="custom-file-input" />
+          <label class="custom-file-label" for="inputGroupFile02">Choose Image</label>
+        </div>
+      </div>
+      <button class="btn btn-lg btn-info" [disabled]="form.invalid">Submit</button>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <div class="card ml-auto w-75" style="width: 20rem;">
+      <img class="card-img-top" [src]="imgSrc" alt="Card image cap" />
+      <div class="card-body">
+        <h3>{{ title.value }}</h3>
+        <p class="card-text">{{ (price.value || 0.00) |number }} TZS</p>
+      </div>
+    </div>
+  </div>
+</div>

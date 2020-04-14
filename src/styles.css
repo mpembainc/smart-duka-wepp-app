@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Roboto' !important;
+  font-size: 17px;
+}
+
+.navbar {
+  padding: 0 1rem;
+  font-weight: 400;
+  border: none !important;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #ecf0f1;
+  border-radius: none;
+  padding: 0.7rem 0.5rem;
+  margin: 0 0.25em;
+}
+
+.dropdown-menu {
+  padding: 0;
+  border: none;
+  font-size: 0.875rem;
+  border-radius: 0;
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #f4f4f4;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 8px 20px;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: #072e36;
+  text-decoration: none;
+  background-color: #2196f31a;
+}
+
+.dropdown-item .fa,
+.dropdown-item .icon {
+  margin-right: 5px;
+  vertical-align: middle;
+}

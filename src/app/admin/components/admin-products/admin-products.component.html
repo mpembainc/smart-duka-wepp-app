@@ -1,0 +1,25 @@
+<div class="clearfix mb-2 mt-5">
+  <button class="float-left btn btn-primary" routerLink="/admin/add-product">Add Product</button>
+  <input type="text" placeholder="Filter Product..." class="form-control float-right w-25"
+    (keyup)="filterProduct($event)">
+</div>
+<table class="table table-sm table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products$ | async">
+      <td>{{product.title}}</td>
+      <td>{{product.category}}</td>
+      <td>{{product.price | number:'1.2-2'}} TZS</td>
+      <td class="text-center">
+        <a href="#">edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
