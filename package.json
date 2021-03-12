@@ -25,7 +25,7 @@
     "bootstrap": "^4.3.1",
     "firebase": "^6.6.1",
     "font-awesome": "^4.7.0",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "jspdf-autotable": "^3.4.3",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
